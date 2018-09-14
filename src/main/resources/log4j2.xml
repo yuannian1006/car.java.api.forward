@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration status="OFF">
+    <!--先定义所有的appender-->
+    <appenders>
+        <!--这个会打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+        <RollingFile name="RollingFile"
+                     fileName="/data/logs/wechatservice/app/analysis.log"
+                     filePattern="/data/logs/$${date:yyyy-MM-dd}/history-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %M %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="50MB"/>
+        </RollingFile>
+
+        <RollingFile name="skynetDay"
+                     fileName="/data/logs/wechatservice/app/info.log"
+                     filePattern="/data/logs/wechatservice/app/HistoryLog-%i.log">
+            <PatternLayout charset="UTF-8"
+                           pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %X{apmTrace} %p %m %n"/>
+            <DefaultRolloverStrategy max="3"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1024 MB"/>
+            </Policies>
+        </RollingFile>
+    </appenders>
+    <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
+    <loggers>
+        <!--建立一个默认的root的logger-->
+        <root level="warn">
+            <appender-ref ref="RollingFile"/>
+        </root>
+
+        <logger name="com.jsxsdqc.utils.LoggerUtil" level="WARN" additivity="false">
+            <AppenderRef ref="skynetDay"/>
+        </logger>
+    </loggers>
+</configuration>
