@@ -3,10 +3,10 @@ package com.jsxsdqc.vo;
 public class UserInfoVo {
 
 	/** 用户编号  **/
-
+//	@ApiModelProperty("用户名")
 	private String no;
 	/** 密码  **/
-
+//	@ApiModelProperty("密码")
 	private String password;
 	/**
 	 * @return  the no
@@ -31,10 +31,6 @@ public class UserInfoVo {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	@Override
-	public String toString() {
-		return "UserInfoVo [no=" + no + ", password=" + password + "]";
 	}
 	
 	

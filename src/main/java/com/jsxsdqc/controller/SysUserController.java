@@ -35,6 +35,7 @@ public class SysUserController {
     public String helloWorld(@RequestBody UserInfoVo user, HttpServletRequest servletRequest) {
 
         String url = prefixUrl + "/system/user/login";
+        System.out.println("请求过来了 " + user);
 
         return HttpUtil.postJson(url, JsonUtil.beanToJson(user));
     }
