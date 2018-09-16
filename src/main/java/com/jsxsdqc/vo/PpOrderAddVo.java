@@ -1,116 +1,129 @@
 package com.jsxsdqc.vo;
 
+import java.util.Date;
+
 /**
  * Created by NianYuan on 2018/7/8.
  */
 public class PpOrderAddVo {
 
     /**订单ID**/
+    //@ApiModelProperty("订单ID")
     private String dcPpOrderId;
 
     /**单位/个人**/
+    //@ApiModelProperty("单位/个人")
     private String tsSysUserId;
 
-    /**客户人员**/
-    private String servicePersonId;
-
     /**订单编号**/
+    //@ApiModelProperty("订单编号")
     private String orderNo;
 
     /**订单类型**/
+    //@ApiModelProperty("订单类型")
     private String orderType;
 
     /**订单状态**/
+    //@ApiModelProperty("订单状态")
     private String orderStatus;
 
     /**使用日期**/
+    //@ApiModelProperty("使用日期")
     private String userDate;
 
     /**使用时间**/
+    //@ApiModelProperty("使用时间")
     private String userTime;
 
     /**返车日期**/
+    //@ApiModelProperty("返车日期")
     private String returnDate;
 
     /**返车时间**/
+    //@ApiModelProperty("返车时间")
     private String returnTime;
 
     /**上车地方**/
+    //@ApiModelProperty("上车地方")
     private String onLocation;
 
+    /**途经地方**/
+    //@ApiModelProperty("途经地方")
+    private String tuLocation;
+
     /**下车地方(包含途经地方)**/
+    //@ApiModelProperty("下车地方(包含途经地方)")
     private String offLocation;
 
-    /**里程(公里)**/
-    private String mileage;
-
-    /**超出里程**/
-    private String exceedMileage;
-
-    /**合计费用**/
-    private String allCost;
-
-    /**预付费**/
-    private String advanceCost;
-
     /**航班号**/
+    //@ApiModelProperty("航班号")
     private String flightNumber;
 
-    private String flightDate;
+    /**起降时间**/
+    //@ApiModelProperty("起降时间")
+    private Date flightDate;
 
-    /****/
+    /**支付方式**/
+    //@ApiModelProperty("支付方式")
     private String paymentMethod;
 
     /**乘客名称**/
+    //@ApiModelProperty("乘客名称")
     private String byCustomerName;
 
     /**乘客电话**/
+    //@ApiModelProperty("乘客电话")
     private String byCustomerPhone;
 
-    /**总共行驶时间**/
-    private String totalDrivingTime;
-
-    /**租车数量**/
-    private String rentedNumber;
-
-    /**租用天数**/
-    private String rentedDays;
-
-    /**订单来源**/
-    private String orderSource;
-
-    /**备注**/
-    private String remark;
-
     /**车辆类型**/
+    //@ApiModelProperty("车辆类型")
     private String carType;
 
-    /**途径地方**/
-    private String tuLocation;
+    /**合同期限**/
+    //@ApiModelProperty("合同期限")
+    private String contractPeriod;
+
+    /**订单属性**/
+    //@ApiModelProperty("订单属性")
+    private String orderProperty;
+
+    /**订单来源**/
+    //@ApiModelProperty("订单来源")
+    private String orderSource;
 
 
-    public String getFlightDate() {
-        return flightDate;
+    /**业务类型（L-临包业务，C-长包业务）**/
+    //@ApiModelProperty("业务类型（L-临包业务，C-长包业务）")
+    private String serviceType;
+
+    /**备注**/
+    //@ApiModelProperty("备注")
+    private String remark;
+
+    /**订单来源**/
+    //@ApiModelProperty("车费单价")
+    private String carPrice;
+
+    /**订单来源**/
+    //@ApiModelProperty("车主结算")
+    private String carOwnerFee;
+
+
+
+    public String getCarPrice() {
+        return carPrice;
     }
 
-    public void setFlightDate(String flightDate) {
-        this.flightDate = flightDate;
+    public void setCarPrice(String carPrice) {
+        this.carPrice = carPrice;
     }
 
-    public String getTuLocation() {
-        return tuLocation;
+    public String getCarOwnerFee() {
+        return carOwnerFee;
     }
 
-    public void setTuLocation(String tuLocation) {
-        this.tuLocation = tuLocation;
-    }
-
-    public String getCarType() {
-        return carType;
-    }
-
-    public void setCarType(String carType) {
-        this.carType = carType;
+    public void setCarOwnerFee(String carOwnerFee) {
+        this.carOwnerFee = carOwnerFee;
     }
 
     public void setDcPpOrderId(String dcPpOrderId){
@@ -127,14 +140,6 @@ public class PpOrderAddVo {
 
     public String getTsSysUserId(){
         return this.tsSysUserId;
-    }
-
-    public void setServicePersonId(String servicePersonId){
-        this.servicePersonId = servicePersonId;
-    }
-
-    public String getServicePersonId(){
-        return this.servicePersonId;
     }
 
     public void setOrderNo(String orderNo){
@@ -201,6 +206,14 @@ public class PpOrderAddVo {
         return this.onLocation;
     }
 
+    public void setTuLocation(String tuLocation){
+        this.tuLocation = tuLocation;
+    }
+
+    public String getTuLocation(){
+        return this.tuLocation;
+    }
+
     public void setOffLocation(String offLocation){
         this.offLocation = offLocation;
     }
@@ -209,44 +222,20 @@ public class PpOrderAddVo {
         return this.offLocation;
     }
 
-    public void setMileage(String mileage){
-        this.mileage = mileage;
-    }
-
-    public String getMileage(){
-        return this.mileage;
-    }
-
-    public void setExceedMileage(String exceedMileage){
-        this.exceedMileage = exceedMileage;
-    }
-
-    public String getExceedMileage(){
-        return this.exceedMileage;
-    }
-
-    public void setAllCost(String allCost){
-        this.allCost = allCost;
-    }
-
-    public String getAllCost(){
-        return this.allCost;
-    }
-
-    public void setAdvanceCost(String advanceCost){
-        this.advanceCost = advanceCost;
-    }
-
-    public String getAdvanceCost(){
-        return this.advanceCost;
-    }
-
     public void setFlightNumber(String flightNumber){
         this.flightNumber = flightNumber;
     }
 
     public String getFlightNumber(){
         return this.flightNumber;
+    }
+
+    public void setFlightDate(Date flightDate){
+        this.flightDate = flightDate;
+    }
+
+    public Date getFlightDate(){
+        return this.flightDate;
     }
 
     public void setPaymentMethod(String paymentMethod){
@@ -273,28 +262,28 @@ public class PpOrderAddVo {
         return this.byCustomerPhone;
     }
 
-    public void setTotalDrivingTime(String totalDrivingTime){
-        this.totalDrivingTime = totalDrivingTime;
+    public void setCarType(String carType){
+        this.carType = carType;
     }
 
-    public String getTotalDrivingTime(){
-        return this.totalDrivingTime;
+    public String getCarType(){
+        return this.carType;
     }
 
-    public void setRentedNumber(String rentedNumber){
-        this.rentedNumber = rentedNumber;
+    public void setContractPeriod(String contractPeriod){
+        this.contractPeriod = contractPeriod;
     }
 
-    public String getRentedNumber(){
-        return this.rentedNumber;
+    public String getContractPeriod(){
+        return this.contractPeriod;
     }
 
-    public void setRentedDays(String rentedDays){
-        this.rentedDays = rentedDays;
+    public void setOrderProperty(String orderProperty){
+        this.orderProperty = orderProperty;
     }
 
-    public String getRentedDays(){
-        return this.rentedDays;
+    public String getOrderProperty(){
+        return this.orderProperty;
     }
 
     public void setOrderSource(String orderSource){
@@ -303,6 +292,14 @@ public class PpOrderAddVo {
 
     public String getOrderSource(){
         return this.orderSource;
+    }
+
+    public void setServiceType(String serviceType){
+        this.serviceType = serviceType;
+    }
+
+    public String getServiceType(){
+        return this.serviceType;
     }
 
     public void setRemark(String remark){

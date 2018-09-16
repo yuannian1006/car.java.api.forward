@@ -1,295 +1,291 @@
 package com.jsxsdqc.entity;
 
-import java.io.Serializable;
+import java.util.Date;
+
+//import javax.persistence.Entity;
+//import javax.persistence.Table;
+//import javax.persistence.Id;
+//import com.xxl.core.base.entity.BaseEntity;
+//
+//import io.swagger.annotations.ApiModelProperty;
 
 /**
- * Created by NianYuan on 2018/7/8.
+ * 
+ * 订单信息表实体类
+ * <p style="display:none">modifyRecord</p>
+ * <p style="display:none">version:V1.0,author:xuxuelei,date:2018-08-03 12:32:34, </p>
+ * @author xuxuelei
+ * @date 2018-08-03 12:32:34
+ * @since 
+ * @version 
+ * 
+ *	此代码由xxl开发内部使用
+ *	外部使用该代码将付相应的法律责任
+ *	更多信息请查询
+ *	http://www.xlxu.com
  */
-public class PpOrder implements Serializable{
+//@Entity
+//@Table(name="dc_pp_order")
+public class PpOrder extends BaseEntity{
 
-    /**订单ID**/
-    private String dcPpOrderId;
+	private static final long serialVersionUID = 1L;
 
-    /**单位/个人**/
-    private String tsSysUserId;
+	/**订单ID**/
+//	@Id
+	private String dcPpOrderId;
 
-    /**客户人员**/
-    private String servicePersonId;
+	/**单位/个人**/
+	private String tsSysUserId;
 
-    /**订单编号**/
-    private String orderNo;
+	/**订单编号**/
+	private String orderNo;
 
-    /**订单类型**/
-    private String orderType;
+	/**订单类型**/
+	private String orderType;
 
-    /**订单状态**/
-    private String orderStatus;
+	/**订单状态**/
+	private String orderStatus;
 
-    /**使用日期**/
-    private String userDate;
+	/**使用日期**/
+	private String userDate;
 
-    /**使用时间**/
-    private String userTime;
+	/**使用时间**/
+	private String userTime;
 
-    /**返车日期**/
-    private String returnDate;
+	/**返车日期**/
+	private String returnDate;
 
-    /**返车时间**/
-    private String returnTime;
+	/**返车时间**/
+	private String returnTime;
 
-    /**上车地方**/
-    private String onLocation;
+	/**上车地方**/
+	private String onLocation;
 
-    /**下车地方(包含途经地方)**/
-    private String offLocation;
+	/**途经地方**/
+	private String tuLocation;
 
-    /**里程(公里)**/
-    private String mileage;
+	/**下车地方(包含途经地方)**/
+	private String offLocation;
 
-    /**超出里程**/
-    private String exceedMileage;
+	/**航班号**/
+	private String flightNumber;
 
-    /**车费单价**/
-    private String allCost;
+	/**起降时间**/
+	private Date flightDate;
 
-    /**车主结算费用**/
-    private String advanceCost;
+	/**支付方式**/
+	private String paymentMethod;
 
-    /**航班号**/
-    private String flightNumber;
+	/**乘客名称**/
+	private String byCustomerName;
 
-    /**起降时间**/
-    private String flightDate;
+	/**乘客电话**/
+	private String byCustomerPhone;
 
-    /**付款方式**/
-    private String paymentMethod;
+	/**车辆类型**/
+	private String carType;
 
-    /**乘客名称**/
-    private String byCustomerName;
+	/**合同期限**/
+	private String contractPeriod;
 
-    /**乘客电话**/
-    private String byCustomerPhone;
+	/**订单属性**/
+	private String orderProperty;
 
-    /**总共行驶时间**/
-    private String totalDrivingTime;
+	/**订单来源**/
+	private String orderSource;
 
-    /**租车数量**/
-    private String rentedNumber;
+	/**业务类型（L-临包业务，C-长包业务）**/
+	private String serviceType;
 
-    /**租用天数**/
-    private String rentedDays;
+	/**备注**/
+	private String remark;
+	
+	/**订单来源**/
+//	@ApiModelProperty("车费单价")
+	private String carPrice;
 
-    /**订单来源**/
-    private String orderSource;
+	/**订单来源**/
+//	@ApiModelProperty("车主结算")
+	private String carOwnerFee;
+	
+	
 
-    /**备注**/
-    private String remark;
+	public String getCarPrice() {
+		return carPrice;
+	}
 
-    /**车辆类型**/
-    private String carType;
+	public void setCarPrice(String carPrice) {
+		this.carPrice = carPrice;
+	}
 
-    /**途径地方**/
-    private String tuLocation;
+	public String getCarOwnerFee() {
+		return carOwnerFee;
+	}
 
+	public void setCarOwnerFee(String carOwnerFee) {
+		this.carOwnerFee = carOwnerFee;
+	}
 
-    public String getFlightDate() {
-        return flightDate;
-    }
+	public void setDcPpOrderId(String dcPpOrderId){
+		this.dcPpOrderId = dcPpOrderId;
+	}
 
-    public void setFlightDate(String flightDate) {
-        this.flightDate = flightDate;
-    }
+	public String getDcPpOrderId(){
+		return this.dcPpOrderId;
+	}
+	public void setTsSysUserId(String tsSysUserId){
+		this.tsSysUserId = tsSysUserId;
+	}
 
-    public String getTuLocation() {
-        return tuLocation;
-    }
+	public String getTsSysUserId(){
+		return this.tsSysUserId;
+	}
+	public void setOrderNo(String orderNo){
+		this.orderNo = orderNo;
+	}
 
-    public void setTuLocation(String tuLocation) {
-        this.tuLocation = tuLocation;
-    }
+	public String getOrderNo(){
+		return this.orderNo;
+	}
+	public void setOrderType(String orderType){
+		this.orderType = orderType;
+	}
 
-    public String getCarType() {
-        return carType;
-    }
+	public String getOrderType(){
+		return this.orderType;
+	}
+	public void setOrderStatus(String orderStatus){
+		this.orderStatus = orderStatus;
+	}
 
-    public void setCarType(String carType) {
-        this.carType = carType;
-    }
+	public String getOrderStatus(){
+		return this.orderStatus;
+	}
+	public void setUserDate(String userDate){
+		this.userDate = userDate;
+	}
 
-    public void setDcPpOrderId(String dcPpOrderId){
-        this.dcPpOrderId = dcPpOrderId;
-    }
+	public String getUserDate(){
+		return this.userDate;
+	}
+	public void setUserTime(String userTime){
+		this.userTime = userTime;
+	}
 
-    public String getDcPpOrderId(){
-        return this.dcPpOrderId;
-    }
-    public void setTsSysUserId(String tsSysUserId){
-        this.tsSysUserId = tsSysUserId;
-    }
+	public String getUserTime(){
+		return this.userTime;
+	}
+	public void setReturnDate(String returnDate){
+		this.returnDate = returnDate;
+	}
 
-    public String getTsSysUserId(){
-        return this.tsSysUserId;
-    }
-    public void setServicePersonId(String servicePersonId){
-        this.servicePersonId = servicePersonId;
-    }
+	public String getReturnDate(){
+		return this.returnDate;
+	}
+	public void setReturnTime(String returnTime){
+		this.returnTime = returnTime;
+	}
 
-    public String getServicePersonId(){
-        return this.servicePersonId;
-    }
-    public void setOrderNo(String orderNo){
-        this.orderNo = orderNo;
-    }
+	public String getReturnTime(){
+		return this.returnTime;
+	}
+	public void setOnLocation(String onLocation){
+		this.onLocation = onLocation;
+	}
 
-    public String getOrderNo(){
-        return this.orderNo;
-    }
-    public void setOrderType(String orderType){
-        this.orderType = orderType;
-    }
+	public String getOnLocation(){
+		return this.onLocation;
+	}
+	public void setTuLocation(String tuLocation){
+		this.tuLocation = tuLocation;
+	}
 
-    public String getOrderType(){
-        return this.orderType;
-    }
-    public void setOrderStatus(String orderStatus){
-        this.orderStatus = orderStatus;
-    }
+	public String getTuLocation(){
+		return this.tuLocation;
+	}
+	public void setOffLocation(String offLocation){
+		this.offLocation = offLocation;
+	}
 
-    public String getOrderStatus(){
-        return this.orderStatus;
-    }
-    public void setUserDate(String userDate){
-        this.userDate = userDate;
-    }
+	public String getOffLocation(){
+		return this.offLocation;
+	}
+	public void setFlightNumber(String flightNumber){
+		this.flightNumber = flightNumber;
+	}
 
-    public String getUserDate(){
-        return this.userDate;
-    }
-    public void setUserTime(String userTime){
-        this.userTime = userTime;
-    }
+	public String getFlightNumber(){
+		return this.flightNumber;
+	}
+	public void setFlightDate(Date flightDate){
+		this.flightDate = flightDate;
+	}
 
-    public String getUserTime(){
-        return this.userTime;
-    }
-    public void setReturnDate(String returnDate){
-        this.returnDate = returnDate;
-    }
+	public Date getFlightDate(){
+		return this.flightDate;
+	}
+	public void setPaymentMethod(String paymentMethod){
+		this.paymentMethod = paymentMethod;
+	}
 
-    public String getReturnDate(){
-        return this.returnDate;
-    }
-    public void setReturnTime(String returnTime){
-        this.returnTime = returnTime;
-    }
+	public String getPaymentMethod(){
+		return this.paymentMethod;
+	}
+	public void setByCustomerName(String byCustomerName){
+		this.byCustomerName = byCustomerName;
+	}
 
-    public String getReturnTime(){
-        return this.returnTime;
-    }
-    public void setOnLocation(String onLocation){
-        this.onLocation = onLocation;
-    }
+	public String getByCustomerName(){
+		return this.byCustomerName;
+	}
+	public void setByCustomerPhone(String byCustomerPhone){
+		this.byCustomerPhone = byCustomerPhone;
+	}
 
-    public String getOnLocation(){
-        return this.onLocation;
-    }
-    public void setOffLocation(String offLocation){
-        this.offLocation = offLocation;
-    }
+	public String getByCustomerPhone(){
+		return this.byCustomerPhone;
+	}
+	public void setCarType(String carType){
+		this.carType = carType;
+	}
 
-    public String getOffLocation(){
-        return this.offLocation;
-    }
-    public void setMileage(String mileage){
-        this.mileage = mileage;
-    }
+	public String getCarType(){
+		return this.carType;
+	}
+	public void setContractPeriod(String contractPeriod){
+		this.contractPeriod = contractPeriod;
+	}
 
-    public String getMileage(){
-        return this.mileage;
-    }
-    public void setExceedMileage(String exceedMileage){
-        this.exceedMileage = exceedMileage;
-    }
+	public String getContractPeriod(){
+		return this.contractPeriod;
+	}
+	public void setOrderProperty(String orderProperty){
+		this.orderProperty = orderProperty;
+	}
 
-    public String getExceedMileage(){
-        return this.exceedMileage;
-    }
-    public void setAllCost(String allCost){
-        this.allCost = allCost;
-    }
+	public String getOrderProperty(){
+		return this.orderProperty;
+	}
+	public void setOrderSource(String orderSource){
+		this.orderSource = orderSource;
+	}
 
-    public String getAllCost(){
-        return this.allCost;
-    }
-    public void setAdvanceCost(String advanceCost){
-        this.advanceCost = advanceCost;
-    }
+	public String getOrderSource(){
+		return this.orderSource;
+	}
+	public void setServiceType(String serviceType){
+		this.serviceType = serviceType;
+	}
 
-    public String getAdvanceCost(){
-        return this.advanceCost;
-    }
-    public void setFlightNumber(String flightNumber){
-        this.flightNumber = flightNumber;
-    }
+	public String getServiceType(){
+		return this.serviceType;
+	}
+	public void setRemark(String remark){
+		this.remark = remark;
+	}
 
-    public String getFlightNumber(){
-        return this.flightNumber;
-    }
-    public void setPaymentMethod(String paymentMethod){
-        this.paymentMethod = paymentMethod;
-    }
-
-    public String getPaymentMethod(){
-        return this.paymentMethod;
-    }
-    public void setByCustomerName(String byCustomerName){
-        this.byCustomerName = byCustomerName;
-    }
-
-    public String getByCustomerName(){
-        return this.byCustomerName;
-    }
-    public void setByCustomerPhone(String byCustomerPhone){
-        this.byCustomerPhone = byCustomerPhone;
-    }
-
-    public String getByCustomerPhone(){
-        return this.byCustomerPhone;
-    }
-    public void setTotalDrivingTime(String totalDrivingTime){
-        this.totalDrivingTime = totalDrivingTime;
-    }
-
-    public String getTotalDrivingTime(){
-        return this.totalDrivingTime;
-    }
-    public void setRentedNumber(String rentedNumber){
-        this.rentedNumber = rentedNumber;
-    }
-
-    public String getRentedNumber(){
-        return this.rentedNumber;
-    }
-    public void setRentedDays(String rentedDays){
-        this.rentedDays = rentedDays;
-    }
-
-    public String getRentedDays(){
-        return this.rentedDays;
-    }
-    public void setOrderSource(String orderSource){
-        this.orderSource = orderSource;
-    }
-
-    public String getOrderSource(){
-        return this.orderSource;
-    }
-    public void setRemark(String remark){
-        this.remark = remark;
-    }
-
-    public String getRemark(){
-        return this.remark;
-    }
+	public String getRemark(){
+		return this.remark;
+	}
 
 }
