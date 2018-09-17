@@ -38,7 +38,8 @@ public class PpOrderDetailController {
      */
     @PostMapping(value = "queryXXL")
     public String querylistByPage(@RequestBody PpOrderDetailXVo xvo, HttpServletRequest request) {
-        String url = prefixUrl + "/system/ppOrderDetail/queryXXL";
+
+        String url = prefixUrl + "/system/ppOrder/queryXXL";
         Map<String, String> map = new HashMap<String, String>(2);
 
         Enumeration<String> headerNames = request.getHeaderNames();
